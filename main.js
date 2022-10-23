@@ -96,10 +96,10 @@ camera.lookAt(0, 0, 0);
 scene.add(camera);
 
 // Orbit Control
-// const controls = new OrbitControls(camera, canvas);
-// controls.autoRotate = true;
-// controls.enableDamping = true;
-// controls.maxPolarAngle = Math.PI * 0.5;
+const controls = new OrbitControls(camera, canvas);
+controls.autoRotate = true;
+controls.enableDamping = true;
+controls.maxPolarAngle = Math.PI * 0.4;
 
 // Renderer
 const renderer = new THREE.WebGLRenderer({
@@ -120,7 +120,7 @@ renderer.setClearColor('#211d20');
 renderer.render(scene, camera);
 
 const tick = () => {
-    // controls.update();
+    controls.update();
     renderer.render(scene, camera);
     window.requestAnimationFrame(tick);
 
