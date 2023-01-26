@@ -10,7 +10,7 @@ const canvas = document.getElementById('webgl');
 
 const loader = new GLTFLoader();
 const dracoLoader = new DRACOLoader();
-dracoLoader.setDecoderPath('https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/js/libs/draco/');
+dracoLoader.setDecoderPath('../node_modules/three/examples/js/libs/draco/gltf/');
 
 loader.setDRACOLoader(dracoLoader);
 
@@ -91,13 +91,14 @@ scene.add(shadowLight);
 
 // Camera
 const camera = new THREE.PerspectiveCamera(45, sizes.width / sizes.height, 0.1, 100);
-camera.position.set(9, 10, 9);
+camera.position.set(9, 6, 12);
 camera.lookAt(0, 0, 0);
 scene.add(camera);
 
 // Orbit Control
 const controls = new OrbitControls(camera, canvas);
 controls.autoRotate = true;
+controls.autoRotateSpeed = 0.4;
 controls.enableDamping = true;
 controls.maxPolarAngle = Math.PI * 0.4;
 
