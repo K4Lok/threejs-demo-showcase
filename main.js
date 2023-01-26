@@ -10,7 +10,7 @@ const canvas = document.getElementById('webgl');
 
 const loader = new GLTFLoader();
 const dracoLoader = new DRACOLoader();
-dracoLoader.setDecoderPath('../node_modules/three/examples/js/libs/draco/gltf/');
+dracoLoader.setDecoderPath('/draco/gltf/');
 
 loader.setDRACOLoader(dracoLoader);
 
